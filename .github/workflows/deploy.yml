@@ -22,10 +22,10 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.STAY_TUNE_DEPLOY }}
         with:
           source-directory: "output"
-          destination-github-username: "holim0"
-          destination-repository-name: "stay-tune-frontend-Deploy"
+          destination-github-username: holim0
+          destination-repository-name: stay-tune-frontend-Deploy
           user-email: ${{ secrets.DEPLOY_EMAIL }}
-          commit-message: ${{ github.event.commits[0].message }}
+          commit-message: ${{ github.event.head_commit.message }}
           target-branch: main
       - name: Test get variable exported by push-to-another-repository
         run: echo $DESTINATION_CLONED_DIRECTORY
