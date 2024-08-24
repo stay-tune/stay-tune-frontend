@@ -1,9 +1,5 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-echo "Running commit-msg hook"
-echo "Commit message file: $1"
-echo "Commit message content:"
-cat "$1"
 
 pnpm exec commitlint --edit "$1"
